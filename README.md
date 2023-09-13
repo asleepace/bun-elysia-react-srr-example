@@ -28,3 +28,16 @@ To start the project in development mode, simply run the following:
 bun run dev
 ```
 
+## Helpful Resources
+
+The following links are helpful resources for learning more about the technologies used in this project:
+
+- [How to server static files with Elysia](https://elysiajs.com/plugins/static.html)
+- [How to create a simple website with Elysia](https://elysiajs.com/quick-start.html)
+- [How to configure Bun with DOM types](https://stackoverflow.com/a/75726039/4326715)
+- [How to configure Bun with JSX documentation](https://bun.sh/docs/runtime/jsx)
+- [How to bundle assets with Bun documentation](https://bun.sh/docs/bundler)
+- [How to render react on the server](https://react.dev/reference/react-dom/server/renderToReadableStream)
+
+If you have any additional questions feel free to reach out to me on [Twitter](https://twitter.com/asleepace) or dropping me an email at colin_teahan@yahoo.com
+```
