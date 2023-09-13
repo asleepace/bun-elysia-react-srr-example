@@ -30,7 +30,7 @@ bun run dev
 
 ## Helpful Resources
 
-The following links are helpful resources for learning more about the technologies used in this project:
+If you have any additional questions feel free to reach out to me on [Twitter](https://twitter.com/asleepace) or dropping me an email at colin@asleepace.com :)
 
 - [How to server static files with Elysia](https://elysiajs.com/plugins/static.html)
 - [How to create a simple website with Elysia](https://elysiajs.com/quick-start.html)
@@ -38,5 +38,3 @@ The following links are helpful resources for learning more about the technologi
 - [How to configure Bun with JSX documentation](https://bun.sh/docs/runtime/jsx)
 - [How to bundle assets with Bun documentation](https://bun.sh/docs/bundler)
 - [How to render react on the server](https://react.dev/reference/react-dom/server/renderToReadableStream)
-
-If you have any additional questions feel free to reach out to me on [Twitter](https://twitter.com/asleepace) or dropping me an email at colin@asleepace.com
