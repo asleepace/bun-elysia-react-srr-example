@@ -39,5 +39,4 @@ The following links are helpful resources for learning more about the technologi
 - [How to bundle assets with Bun documentation](https://bun.sh/docs/bundler)
 - [How to render react on the server](https://react.dev/reference/react-dom/server/renderToReadableStream)
 
-If you have any additional questions feel free to reach out to me on [Twitter](https://twitter.com/asleepace) or dropping me an email at colin_teahan@yahoo.com
-```
+If you have any additional questions feel free to reach out to me on [Twitter](https://twitter.com/asleepace) or dropping me an email at colin@asleepace.com
