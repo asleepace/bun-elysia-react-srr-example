@@ -1,6 +1,6 @@
-# Bun, Elysia and React with Server Side Rendering
+# Bun, Elysia & React SSR Example
 
-a simple website using [Bun](https://bun.sh/docs/installation), [Elysia](https://elysiajs.com/) and [React](https://react.dev/) server-side rendering.
+A simple website using [Bun](https://bun.sh/docs/installation), [Elysia](https://elysiajs.com/) and [React](https://react.dev/) with support for server-side rendering.
 
 - **Bun** the JS/TS bundler, runtime & package manager
 - **Elysia** a web framework for building performant web applications
@@ -21,8 +21,6 @@ git clone https://github.com/asleepace/bun-elysia-react-srr-example.git
 cd bun-elysia-react-srr-example
 bun install
 ```
-
-## Run Development 
 
 To start the project in development mode, simply run the following:
 
