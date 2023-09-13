@@ -1,15 +1,32 @@
-# Elysia with Bun runtime
+# Bun, Elysia and React with Server Side Rendering
+
+a simple website using [Bun](https://bun.sh/docs/installation), [Elysia](https://elysiajs.com/) and [React](https://react.dev/) server-side rendering.
+
+- **Bun** the JS/TS bundler, runtime & package manager
+- **Elysia** a web framework for building performant web applications
+- **React** a JavaScript library for building user interfaces
 
 ## Getting Started
-To get started with this template, simply paste this command into your terminal:
+
+Makr sure you have Bun installed
+
 ```bash
-bun create elysia ./elysia-example
+curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
 ```
 
-## Development
-To start the development server run:
+The run the following to download the project and install the required dependencies:
+
+```bash
+git clone https://github.com/asleepace/bun-elysia-react-srr-example.git
+cd bun-elysia-react-srr-example
+bun install
+```
+
+## Run Development 
+
+To start the project in development mode, simply run the following:
+
 ```bash
 bun run dev
 ```
 
-Open http://localhost:3000/ with your browser to see the result.# bun-elysia-react-srr-example
