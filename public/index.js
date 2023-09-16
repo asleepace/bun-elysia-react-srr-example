@@ -22616,33 +22616,30 @@ var client = __toESM(require_client(), 1);
 // src/react/App.tsx
 var import_react2 = __toESM(require_react(), 1);
 
-// src/react/hooks/useEventStream.ts
+// src/react/hooks/useHotModuleReloading.ts
 var import_react = __toESM(require_react(), 1);
-function useEventStream(url) {
-  const [messages, setMessages] = import_react.useState([]);
+function useHotModuleReloading() {
   import_react.useEffect(() => {
-    const eventSource = new EventSource(url, {
-      withCredentials: true
-    });
-    console.log(eventSource);
-    eventSource.onopen = (event) => {
+    const socket = new WebSocket(HOT_RELOADING_URL);
+    socket.onopen = (event) => {
       console.log("[client] onopen:", event);
-      eventSource.onmessage = (event2) => {
-        console.log("[client] onmessage:", event2);
-        setMessages([...messages, event2]);
-      };
-      eventSource.onerror = (event2) => {
-        console.log("[client] onerror:", event2);
+      socket.onmessage = (event2) => {
+        console.log("[client] hot reloading!");
+        window.location.reload();
       };
     };
+    return () => {
+      console.log("[client] useHotModuleReloading unmounting...");
+      socket.close();
+    };
   }, []);
-  return messages;
 }
+var HOT_RELOADING_URL = "ws://localhost:3000/hmr";
 
 // src/react/App.tsx
 function App() {
   const [count, setCount] = import_react2.useState(0);
-  const messages = useEventStream("http://localhost:3000/events");
+  useHotModuleReloading();
   return import_react2.default.createElement("html", null, import_react2.default.createElement("head", null, import_react2.default.createElement("meta", {
     charSet: "utf-8"
   }), import_react2.default.createElement("title", null, "Bun, Elysia & React"), import_react2.default.createElement("meta", {
@@ -22651,11 +22648,9 @@ function App() {
   }), import_react2.default.createElement("meta", {
     name: "viewport",
     content: "width=device-width, initial-scale=1"
-  })), import_react2.default.createElement("body", null, import_react2.default.createElement("h1", null, "Counter ", count), import_react2.default.createElement("button", {
+  })), import_react2.default.createElement("body", null, import_react2.default.createElement("h1", null, "Cool Counter ", count), import_react2.default.createElement("button", {
     onClick: () => setCount(count + 1)
-  }, "Increment"), import_react2.default.createElement("ul", null, messages.map((message, index) => import_react2.default.createElement("li", {
-    key: index
-  }, message.data)))));
+  }, "Increment")));
 }
 
 // src/react/index.tsx
