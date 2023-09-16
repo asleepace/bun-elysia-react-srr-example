@@ -11,6 +11,7 @@ await Bun.build({
   outdir: './public',
 });
 
+
 const app = new Elysia()
   .use(staticPlugin())
   .use(cors())
