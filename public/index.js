@@ -22648,7 +22648,7 @@ function App() {
   }), import_react2.default.createElement("meta", {
     name: "viewport",
     content: "width=device-width, initial-scale=1"
-  })), import_react2.default.createElement("body", null, import_react2.default.createElement("h1", null, "Cool Counter ", count), import_react2.default.createElement("button", {
+  })), import_react2.default.createElement("body", null, import_react2.default.createElement("h1", null, "Counter ", count), import_react2.default.createElement("button", {
     onClick: () => setCount(count + 1)
   }, "Increment")));
 }
