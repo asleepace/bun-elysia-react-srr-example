@@ -1,5 +1,6 @@
 // src/react/App.tsx
 import React, { useState } from "react";
+import '../assets/styles.css'
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -10,6 +11,7 @@ export default function App() {
         <title>Bun, Elysia & React</title>
         <meta name="description" content="Bun, Elysia & React" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./public/assets/styles.css" />
       </head>
       <body>
         <h1>Counter {count}</h1>

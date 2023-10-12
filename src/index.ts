@@ -7,7 +7,11 @@ import App from './react/App'
 // bundle client side react-code each time the server starts
 await Bun.build({
   entrypoints: ['./src/react/index.tsx'],
+  publicPath: './public/',
   outdir: './public',
+  naming: {
+    asset: './assets/[name].[ext]',
+  }
 });
 
 const app = new Elysia()
