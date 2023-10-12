@@ -1,6 +1,6 @@
 import { Elysia, ws } from "elysia";
 import { staticPlugin } from '@elysiajs/static'
-import { renderToReadableStream } from 'react-dom/server'
+import { renderToReadableStream, renderToString } from 'react-dom/server'
 import { createElement } from "react";
 import { cors } from '@elysiajs/cors'
 import App from './react/App'
@@ -9,6 +9,9 @@ import App from './react/App'
 await Bun.build({
   entrypoints: ['./src/react/index.tsx'],
   outdir: './public',
+  naming: {
+    asset: '[name].[ext]',
+  }
 });
 
 
@@ -21,6 +24,7 @@ const app = new Elysia()
   // will send a message to all clients when the server has reloaded
   .ws('/hmr', {
     open(socket) {
+      console.log('[server] client connected')
       socket.subscribe('hot-reload') // hot module reloading
     },
   })
@@ -36,13 +40,18 @@ const app = new Elysia()
 
     // output the stream as the response
     return new Response(stream, {
-      headers: { 'Content-Type': 'text/html' }
+      headers: { 
+        'Content-Type': 'text/html',
+        'Cache-Control': 'no-cache, must-revalidate'
+      }
     })
   })
   .listen(3000, (server) => {
     // each time the server refreshes (i.e. hot reloads) this will be
     // called and publish a websocket message to all clients to reload
-    server.publish('hot-reload', new Date().toISOString())
+    const reactApp = createElement(App)
+    const html = renderToString(reactApp)
+    server.publish('hot-reload', html)
   })
 
 
